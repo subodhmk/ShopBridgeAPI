@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using ShopBridgeAPI.Models;
@@ -29,7 +26,7 @@ namespace ShopBridgeAPI.Controllers
             }
             catch (Exception Ex)
             {
-                fileLogger.WriteError(this, Ex.StackTrace);
+                fileLogger.WriteError(this, Ex.Message);
                 return null;
             }
         }
@@ -51,7 +48,7 @@ namespace ShopBridgeAPI.Controllers
             }
             catch (Exception Ex)
             {
-                fileLogger.WriteError(this, Ex.StackTrace);
+                fileLogger.WriteError(this, Ex.Message);
                 return NotFound();
             }
         }
@@ -95,7 +92,7 @@ namespace ShopBridgeAPI.Controllers
             }
             catch (Exception Ex)
             {
-                fileLogger.WriteError(this, Ex.StackTrace);
+                fileLogger.WriteError(this, Ex.Message);
                 return BadRequest("Exception");
             }
         }
@@ -118,7 +115,7 @@ namespace ShopBridgeAPI.Controllers
             }
             catch (Exception Ex)
             {
-                fileLogger.WriteError(this, Ex.StackTrace);
+                fileLogger.WriteError(this, Ex.Message);
                 return BadRequest("Exception");
             }
         }
@@ -143,7 +140,7 @@ namespace ShopBridgeAPI.Controllers
             }
             catch (Exception Ex)
             {
-                fileLogger.WriteError(this, Ex.StackTrace);
+                fileLogger.WriteError(this, Ex.Message);
                 return NotFound();
             }
         }
@@ -165,10 +162,9 @@ namespace ShopBridgeAPI.Controllers
             }
             catch (Exception Ex)
             {
-                fileLogger.WriteError(this,Ex.StackTrace);
+                fileLogger.WriteError(this,Ex.Message);
                 return false;
             }
         }
-       
     }
 }
